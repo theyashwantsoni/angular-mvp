@@ -1,0 +1,17 @@
+<h3 *ngIf="name!=null">{{name.login}}</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>repo name</th><th>language</th><th> mark </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of repos">
+            <td>{{ r.name }}</td>
+            <td>{{r.language}}</td>
+            <td><button (click)="addSkill(r.language)">add to list</button></td>
+        </tr>
+    </tbody>
+</table>
+<input #myinput><button (click)="searchSelectedSkill(myinput.value)">search</button>
