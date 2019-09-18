@@ -1,0 +1,5 @@
+<form [formGroup]="login">
+    <input type="text" formControlName="email">
+    <input type="text"  formControlName="pass" >
+    <input type="submit" (click)="onSubmit()" [disabled]="!login.valid">
+</form>

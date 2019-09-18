@@ -29,9 +29,8 @@ export class Test{
         this.presenter.searchTerms$.pipe(
             takeUntil(this.destroy),
           ).subscribe(term => {
-              console.log('qwer',term)
               this.search.emit(term);
-          });
+        });
 
 
 
@@ -47,7 +46,7 @@ export class Test{
     addSkill(name: string): void {
         this.presenter.addSkill(name);
     }
-    searchSelectedSkill(string){
+    searchSelectedSkill(name:string){
         this.presenter.search(name);
     }
   }

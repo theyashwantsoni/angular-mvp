@@ -9,7 +9,7 @@
     <tbody>
         <tr *ngFor="let r of repos">
             <td>{{ r.name }}</td>
-            <td>{{r.language}}</td>
+            <td>{{ r.language }}</td>
             <td><button (click)="addSkill(r.language)">add to list</button></td>
         </tr>
     </tbody>

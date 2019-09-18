@@ -26,11 +26,11 @@ export class TestContainerComponent implements OnInit{
     console.log(this.selectedLangs);
   }
   handleSearchInput(arg:string){
-    // for(let i=0;i<this.selectedLangs.length;i++){
-    //   console.log(i,this.selectedLangs[i].toLowerCase(),arg.toLowerCase());
-    //   if(this.selectedLangs[i].toLowerCase() == arg.toLowerCase()){
-    //     console.log('boom');
-    //   }
-    // }
+    for(let i=0;i<this.selectedLangs.length;i++){
+      if(this.selectedLangs[i].toLowerCase() == arg.toLowerCase()){
+        console.log('boom',i);
+        
+      }
+    }
   }
 }
