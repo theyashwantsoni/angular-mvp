@@ -1,29 +1,31 @@
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { TestContainerComponent } from './test-container/test.container';
-import { TestComponent} from './test-container/test.component';
-import { LoginContainer } from './login/login.container';
-import { LoginComponent } from './login/login.component';
-import { Login2Component } from './login2/login2.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UserListComponent } from './UserComponents/user-list/user-list.component';
+import { AddUserComponent } from './UserComponents/add-user/add-user.component';
+import { UserDetailComponent } from './UserComponents/user-detail/user-detail.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    TestContainerComponent,
-    TestComponent,
-    LoginComponent,
-    LoginContainer,
-    Login2Component
+    UserListComponent,
+    AddUserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
-    FormsModule,ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'User', pathMatch: 'full' },
+      { path: 'User', component: UserListComponent },
+      { path: 'AddUser', component: AddUserComponent },
+      // { path: 'AddStudent', component: AddStudentComponent },
+      // { path: 'StudentDetail', component: ViewStudentComponent },
+      // { path: 'StudentList', component: StudentListComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
